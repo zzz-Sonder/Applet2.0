@@ -18,7 +18,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-
+        console.log(options);
     },
 
     /**
@@ -99,7 +99,16 @@ Page({
     },
 
     handleEvent(){
-        console.log(1112121212);
+        console.log("搜索处理");
+    },
+
+    handleChangePage(evt){
+        // console.log(evt.currentTarget.dataset.id);
+        var id = evt.currentTarget.dataset.id
+        var title =evt.currentTarget.dataset.title
+        wx.navigateTo({
+          url: `/pages/detail/detail?id=${id}&title=${title}`,
+        })
     },
 
     handleGet(){

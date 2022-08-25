@@ -5,4 +5,5 @@ input{
 	margin: 10rpx;
 	padding: 10rpx;
 	height: 30rpx;
+	background-color: white;
 }

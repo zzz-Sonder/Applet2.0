@@ -1,0 +1,22 @@
+{
+  "name": "applet2.0",
+  "version": "1.0.0",
+  "description": "小程序实战",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzz-Sonder/Applet2.0.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zzz-Sonder/Applet2.0/issues"
+  },
+  "homepage": "https://github.com/zzz-Sonder/Applet2.0#readme",
+  "dependencies": {
+    "@miniprogram-component-plus/sticky": "^1.0.1"
+  }
+}
