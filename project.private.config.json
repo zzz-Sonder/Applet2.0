@@ -3,7 +3,8 @@
     "projectname": "Applet2.0",
     "setting": {
         "compileHotReLoad": true,
-        "urlCheck": false
+        "urlCheck": false,
+        "preloadBackgroundData": false
     },
     "condition": {
         "miniprogram": {
@@ -12,6 +13,27 @@
                     "name": "pages/detail/detail",
                     "pathName": "pages/detail/detail",
                     "query": "id=1&title=荣耀9x",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "pages/search/search",
+                    "pathName": "pages/search/search",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "pages/category/category",
+                    "pathName": "pages/category/category",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "pages/shopcar/shopcar",
+                    "pathName": "pages/shopcar/shopcar",
+                    "query": "",
                     "launchMode": "default",
                     "scene": null
                 }

@@ -100,6 +100,9 @@ Page({
 
     handleEvent(){
         console.log("搜索处理");
+        wx.navigateTo({
+          url: '/pages/search/search',
+        })
     },
 
     handleChangePage(evt){
@@ -183,5 +186,4 @@ Page({
             console.log(res);
         })
     },
-
 })

@@ -38,8 +38,7 @@
 </view>
 
 
-<view class="bootom"> 
-	<view style="background: #ffd591;">跳转购物车</view>
-	<view style="background: #f76260;">加入购物车</view>
-	
+<view class="bottom"> 
+	<view style="background: #ffd591;" bindtap="handleChange">跳转购物车</view>
+	<view style="background: #f76260;" bindtap="handleAdd">加入购物车</view>
 </view>

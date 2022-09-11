@@ -1,4 +1,5 @@
 // pages/detail/detail.js
+import CheckAuth from "../../util/auth"
 import request from "../../util/request"
 Page({
 
@@ -109,5 +110,68 @@ Page({
         this.setData({
             current:evt.currentTarget.dataset.index
         })
-    }
+    },
+    handleChange(){
+        wx.switchTab({
+            url: '/pages/shopcar/shopcar',
+          })
+    },
+
+
+    handleAdd() {
+        // console.log("add")
+    
+        /*
+          1. 判断本地存储是否有手机号信息，如果有直接加入
+          2. 没有手机号，判断是否有token信息，如果有，引导调整手机号绑定
+          3 没有token授权信息， 我们引导用户授权页面
+        */
+        CheckAuth(() => {
+          console.log("准备加入购物车")
+          let {
+            nickName
+          } = wx.getStorageSync('token')
+          let tel = wx.getStorageSync('tel')
+          var goodId = this.data.info.id
+          // console.log(nickName,tel,goodId)
+    
+          request({
+            url: "/carts",
+            data: {
+              tel,
+              goodId,
+              nickName
+            }
+          }).then(res => {
+            console.log(res)
+    
+            if (res.length === 0) {
+              return request({
+                url: "/carts",
+                method: "post",
+                data: {
+                  "username": nickName,
+                  "tel": tel,
+                  "goodId": goodId,
+                  "number": 1,
+                  "checked": false
+                }
+              })
+            }else{
+              return request({
+                url: `/carts/${res[0].id}`,
+                method: "put",
+                data: {
+                  ...res[0],
+                  number:res[0].number+1
+                }
+              })
+            }
+          }).then(res=>{
+            wx.showToast({
+              title: '加入购物车成功',
+            })
+          })
+        })
+      }
 })
